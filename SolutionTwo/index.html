@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ESS Assignment</title>
+    <link rel='stylesheet' href='css/main.css' />
+</head>
+<body>
+
+    <h1 id="title"><strong>Page</strong> <small>Knowledge Check: Exercise</small><hr></h1>
+ 
+    <div>
+        <object id="iframeOne" data="iFrameOne.html" type="text/html" width="80%" height="600px"></object>
+        <object id="iframeTwo" data="iFrameTwo.html" type="text/html" width="80%" height="600px"></object>
+        <br>
+        <button id="navBtn">Next</button>
+        <br>
+        <hr>
+        <div>
+        <h2>Instructions</h2>
+        <ul>
+            <li> The main document and iframe content each have their own css styles respectively.</li>
+            <li> The challenge is to have the same functionality and styling without using an iframe.</li>
+            <li>** Make sure your solutions is supported throughout different browsers. **</li>
+        </ul>
+    </div>
+
+<script>
+    document.getElementById("iframeOne").style.display =
+				"inline";
+			document.getElementById("iframeTwo").style.display =
+				"none";
+    const navBtn = document.getElementById('navBtn')
+    navBtn.addEventListener('click', function(e) {
+        if (navBtn.textContent !== 'Back') {
+            document.getElementById('iframeOne').style.display = 'none';
+            document.getElementById('iframeTwo').style.display = 'inline';
+            navBtn.textContent = 'Back'
+        } else {
+            document.getElementById('iframeOne').style.display = 'inline';
+            document.getElementById('iframeTwo').style.display = 'none';
+            navBtn.textContent = 'Next'
+        }
+    })
+</script>
+</body>
+</html>
+
+
+

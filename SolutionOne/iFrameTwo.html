@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--course content begins here-->
+<div id="esscontainer" class="esscontainer_shadow">
+	<link
+		href="css/second.css"
+		rel="stylesheet"
+		type="text/css"
+	/>
+	<div id="ess-wrapper">
+		<div id="ess-block">
+			<div class="ess-toptitle">
+				<h1>AS 17.37 Medical Uses of Marijuana</h1>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Resources</button>
+				<div class="dropdown-content" style="right:0;">
+					<a href="index.html" target="_blank"
+						>Alaska Statute 17.37 Medical Uses of
+						Marijuana</a
+					>
+					<a href="index.html" target="_blank"
+						>Alaska Statute 17.38 The Regulation of
+						Marijuana</a
+					>
+					<a href="index.html" target="_blank"
+						>3 AAC 306 Regulations for the Marijuana Control
+						Board</a
+					>
+					<a href="index.html" target="_blank"
+						>Marijuana Handler Permit Application
+						Instructions</a
+					>
+				</div>
+			</div>
+			<div class="ess-content">
+				<h3>Checking IDs Exercise</h3>
+				<p>
+					Examine ID to determine whether or not you would
+					sell to the customer.
+				</p>
+				<div class="center">
+					<img
+						src="https://i.imgur.com/zE5tOlu.jpg"
+						width="400"
+						height="250"
+						alt=""
+					/>
+					<ul class="doit">
+						<span class="green">
+							<li>
+								<a
+									href="javascript:HideAllShowOne('idone')"
+									id="sell"
+									>SELL</a
+								>
+							</li>
+						</span>
+						<li>
+							<a
+								href="javascript:HideAllShowOne('idtwo')"
+								id="nosell"
+								>DON&apos;T SELL</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div
+					id="idone"
+					class="expired"
+					style="display:none;"
+				>
+					<strong>Incorrect.</strong><br />The correct
+					answer is:<br /><span class="red"
+						><strong>DON&apos;T SELL</strong></span
+					><br />This license has some bumps and scratches
+					indicating that it may have been tampered with.
+					It&apos;s expired.
+					<div class="close">
+						<a href="javascript:HideContent('idone')"
+							><strong>X</strong></a
+						>
+					</div>
+				</div>
+				<div
+					id="idtwo"
+					class="expired"
+					style="display:none;"
+				>
+					<strong>Congratulations.</strong> <br />The
+					correct answer is:<br /><span class="red"
+						><strong>DON&apos;T SELL</strong></span
+					><br />This license has some bumps and scratches
+					indicating that it may have been tampered with.
+					It&apos;s expired.
+					<div class="close">
+						<a href="javascript:HideContent('idtwo')"
+							><strong>X</strong></a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" language="JavaScript">
+		const sell = document.querySelector("#sell");
+		const nosell = document.querySelector("#nosell");
+		const correct = document.querySelector("#idtwo");
+		const incorrect = document.querySelector("#idone");
+		sell.onclick = () => {
+			correct.style.display = "none";
+			incorrect.style.display = "block";
+		};
+		nosell.onclick = () => {
+			incorrect.style.display = "none";
+			correct.style.display = "block";
+		};
+		function HideAllShowOne(d) {
+			// Between the quotation marks, list the id values of each div.
+			var IDvaluesOfEachDiv = "idone idtwo";
+			//-------------------------------------------------------------
+			IDvaluesOfEachDiv = IDvaluesOfEachDiv.replace(
+				/[,\s"&apos;]/g,
+				" "
+			);
+			IDvaluesOfEachDiv = IDvaluesOfEachDiv.replace(
+				/^\s*/,
+				""
+			);
+			IDvaluesOfEachDiv = IDvaluesOfEachDiv.replace(
+				/\s*$/,
+				""
+			);
+			IDvaluesOfEachDiv = IDvaluesOfEachDiv.replace(
+				/  +/g,
+				" "
+			);
+			var IDlist = IDvaluesOfEachDiv.split(" ");
+			for (var i = 0; i < IDlist.length; i++) {
+				HideContent(IDlist[i]);
+			}
+			ShowContent(d);
+		}
+		function HideContent(d) {
+			document.getElementById(d).style.display = "none";
+		}
+		function ShowContent(d) {
+			document.getElementById(d).style.display = "block";
+		}
+		function ReverseDisplay(d) {
+			if (
+				document.getElementById(d).style.display == "none"
+			) {
+				document.getElementById(d).style.display = "block";
+			} else {
+				document.getElementById(d).style.display = "none";
+			}
+		}
+		//-->
+	</script>
+</div>
